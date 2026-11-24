@@ -1,12 +1,13 @@
 /**
- * MERLIN — Multi-node Edge Runtime for Language-model Inference Networks
+ * MERLIN — A Falacy Labs Product
+ * Multi-node Edge Runtime for Language-model Inference Networks
  * Vanilla JavaScript // Interactions, Canvas Network Simulation & Observables
  */
 
 (function () {
   'use strict';
 
-  // Check user motion preferences
+  // Check user motion and pointer preferences
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isFinePointer = window.matchMedia('(pointer: fine)').matches;
 
@@ -82,7 +83,9 @@
     });
 
     // Hover effect over interactive elements
-    const hoverTargets = document.querySelectorAll('a, button, .statement-line, .title-char, .telemetry-card, .network-canvas-wrapper');
+    const hoverTargets = document.querySelectorAll(
+      'a, button, .statement-line, .title-char, .telemetry-card, .network-canvas-wrapper, .status-indicator, .brand-origin-badge'
+    );
     hoverTargets.forEach((target) => {
       target.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
       target.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
@@ -121,7 +124,7 @@
       const normX = (e.clientX - centerX) / (rect.width / 2);
       const normY = (e.clientY - centerY) / (rect.height / 2);
 
-      // Very subtle, quiet angles (-4 to +4 degrees)
+      // Very subtle, quiet angles (-4.5 to +4.5 degrees)
       targetTiltX = -normY * 4.5;
       targetTiltY = normX * 4.5;
     });
@@ -163,17 +166,37 @@
       active: false
     };
 
+    function isSimulatorEnabled() {
+      // Disabled on mobile view (< 768px) or when hidden via CSS display: none
+      return window.innerWidth > 768 && canvasWrap.offsetParent !== null;
+    }
+
     function resizeCanvas() {
+      if (!isSimulatorEnabled()) {
+        if (animFrameId) {
+          cancelAnimationFrame(animFrameId);
+          animFrameId = null;
+        }
+        isCanvasVisible = false;
+        return;
+      }
+
       const rect = canvasWrap.getBoundingClientRect();
       width = rect.width;
       height = rect.height;
       dpr = window.devicePixelRatio || 1;
+
+      if (width <= 0 || height <= 0) return;
 
       canvas.width = Math.floor(width * dpr);
       canvas.height = Math.floor(height * dpr);
       ctx.scale(dpr, dpr);
 
       initNodes();
+
+      if (isCanvasVisible && !animFrameId && !prefersReducedMotion) {
+        animFrameId = requestAnimationFrame(updateAndDraw);
+      }
     }
 
     function initNodes() {
@@ -224,6 +247,14 @@
     }
 
     function updateAndDraw() {
+      if (!isSimulatorEnabled()) {
+        if (animFrameId) {
+          cancelAnimationFrame(animFrameId);
+          animFrameId = null;
+        }
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
       const maxDist = Math.min(130, width * 0.35);
@@ -330,7 +361,7 @@
         ctx.fill();
       }
 
-      if (isCanvasVisible && !prefersReducedMotion) {
+      if (isCanvasVisible && !prefersReducedMotion && isSimulatorEnabled()) {
         animFrameId = requestAnimationFrame(updateAndDraw);
       }
     }
@@ -340,9 +371,9 @@
       const canvasObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && isSimulatorEnabled()) {
               isCanvasVisible = true;
-              if (!animFrameId) {
+              if (!animFrameId && !prefersReducedMotion) {
                 animFrameId = requestAnimationFrame(updateAndDraw);
               }
             } else {
@@ -358,8 +389,10 @@
       );
       canvasObserver.observe(canvasWrap);
     } else {
-      isCanvasVisible = true;
-      requestAnimationFrame(updateAndDraw);
+      if (isSimulatorEnabled()) {
+        isCanvasVisible = true;
+        requestAnimationFrame(updateAndDraw);
+      }
     }
 
     // Initial setup and resize listener
@@ -372,7 +405,7 @@
 
   /* ── 5. Console Greeting (Editorial Whisper) ───────────────────────────── */
   console.log(
-    '%c MERLIN %c Multi-node Edge Runtime for Language-model Inference Networks %c\n Falco columbarius // Intelligence, without a centre.',
+    '%c MERLIN %c A FALACY LABS PRODUCT %c\n Multi-node Edge Runtime for Language-model Inference Networks\n Falco columbarius // Intelligence, without a centre.',
     'background: #EAEAEA; color: #0A0A0A; font-weight: bold; padding: 2px 6px; font-family: monospace;',
     'background: #1A1A1A; color: #888888; padding: 2px 6px; font-family: monospace;',
     'color: #555555; font-style: italic; font-family: sans-serif;'
