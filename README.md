@@ -30,18 +30,4 @@ MERLIN is in early development at Falacy Labs. Something is quietly taking shape
 
 ---
 
-### Preview
-
-This landing page is built simply and cleanly with pure HTML, CSS, and vanilla JavaScript — no frameworks, no build tools, no tracking.
-
-You can preview it directly by opening `index.html` in any browser, or by running a local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit [http://localhost:8000](http://localhost:8000).
-
----
-
 © Falacy Labs
