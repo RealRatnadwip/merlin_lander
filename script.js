@@ -334,17 +334,13 @@
           ctx.beginPath();
           ctx.arc(curX, curY, 1.6, 0, Math.PI * 2);
           
-          // Twilight amethyst tint on alternating packets with subtle glow
+          // Clean crisp token packets without blurry glow
           if (p.id % 3 !== 0) {
-            ctx.fillStyle = `rgba(195, 158, 220, ${packetAlpha.toFixed(2)})`;
-            ctx.shadowColor = 'rgba(116, 84, 130, 0.7)';
-            ctx.shadowBlur = 5;
+            ctx.fillStyle = `rgba(184, 146, 204, ${packetAlpha.toFixed(2)})`;
           } else {
-            ctx.fillStyle = `rgba(255, 255, 255, ${packetAlpha.toFixed(2)})`;
-            ctx.shadowBlur = 0;
+            ctx.fillStyle = `rgba(234, 234, 234, ${packetAlpha.toFixed(2)})`;
           }
           ctx.fill();
-          ctx.shadowBlur = 0;
         }
       }
 

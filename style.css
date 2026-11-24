@@ -2,7 +2,7 @@
    MERLIN — A Falacy Labs Product
    Design System & Stylesheet // Pure CSS3
    Monochromatic, Minimal, Editorial, Atmospheric with #745482 Accent
-   Optimized for Mobile, Tablet, Desktop, & TV Displays
+   Optimized for Mobile, Tablet, Desktop, & TV Displays (Zero Artificial Glow)
    ========================================================================== */
 
 /* ── Reset & Variables ───────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@
 :root {
   --bg-primary: #0A0A0A;
   --bg-elevated: #111113;
-  --bg-card: rgba(20, 20, 24, 0.6);
+  --bg-card: rgba(18, 18, 22, 0.65);
   
   --text-primary: #EAEAEA;
   --text-secondary: #8E8E93;
@@ -26,15 +26,13 @@
   --border-subtle: rgba(255, 255, 255, 0.12);
   --border-accent: rgba(255, 255, 255, 0.28);
   
-  /* Carefully calibrated #745482 accent palette */
+  /* Clean, flat #745482 accent palette (No fuzzy neon glows) */
   --accent-purple: #745482;
   --accent-purple-light: #B892CC;
   --accent-purple-soft: #9F84AC;
-  --accent-purple-glow: rgba(116, 84, 130, 0.32);
   --accent-purple-border: rgba(116, 84, 130, 0.45);
-  --accent-purple-subtle: rgba(116, 84, 130, 0.12);
+  --accent-purple-subtle: rgba(116, 84, 130, 0.1);
   
-  --silver-glow: rgba(255, 255, 255, 0.06);
   --silver-accent: #D4D4D8;
   
   --font-serif: 'Instrument Serif', Georgia, serif;
@@ -48,7 +46,7 @@
 }
 
 ::selection {
-  background: rgba(116, 84, 130, 0.45);
+  background: rgba(116, 84, 130, 0.35);
   color: #FFFFFF;
 }
 
@@ -73,7 +71,7 @@ body {
   position: relative;
 }
 
-/* ── Ambient Background Atmosphere ───────────────────────────────────────── */
+/* ── Ambient Background Atmosphere (Very soft, non-intrusive) ─────────────── */
 .ambient-layer {
   position: fixed;
   inset: 0;
@@ -92,7 +90,7 @@ body {
 .orb-1 {
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(234, 234, 234, 0.035), transparent 70%);
+  background: radial-gradient(circle, rgba(234, 234, 234, 0.025), transparent 70%);
   top: -15%;
   left: 20%;
   animation: orbDrift 28s ease-in-out infinite alternate;
@@ -101,17 +99,16 @@ body {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(160, 160, 175, 0.025), transparent 70%);
+  background: radial-gradient(circle, rgba(160, 160, 175, 0.02), transparent 70%);
   bottom: 10%;
   right: -5%;
   animation: orbDrift 24s ease-in-out infinite alternate-reverse;
 }
 
-/* Orb 3: Twilight Nebula Glow (#745482) */
 .orb-3 {
-  width: 580px;
-  height: 580px;
-  background: radial-gradient(circle, rgba(116, 84, 130, 0.16), rgba(116, 84, 130, 0.04) 50%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(116, 84, 130, 0.07), transparent 70%);
   top: 45%;
   left: -5%;
   animation: orbDrift 32s ease-in-out infinite alternate;
@@ -120,14 +117,14 @@ body {
 @keyframes orbDrift {
   0% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.65;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.95;
+    opacity: 0.8;
   }
   100% {
-    transform: translate(45px, -35px) scale(1.12);
-    opacity: 0.55;
+    transform: translate(45px, -35px) scale(1.1);
+    opacity: 0.4;
   }
 }
 
@@ -137,7 +134,7 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.036;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 160px;
@@ -165,12 +162,12 @@ body {
   left: 0;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
   opacity: 0;
-  transition: opacity 0.3s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  transition: opacity 0.3s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
   transform: translate(-50%, -50%);
 }
 
@@ -180,11 +177,10 @@ body.cursor-active .cursor-ring {
 }
 
 body.cursor-hover .cursor-ring {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-color: var(--accent-purple-light);
-  background-color: rgba(116, 84, 130, 0.1);
-  box-shadow: 0 0 20px rgba(116, 84, 130, 0.25);
+  background-color: rgba(116, 84, 130, 0.08);
 }
 
 /* ── Navigation ──────────────────────────────────────────────────────────── */
@@ -194,7 +190,7 @@ body.cursor-hover .cursor-ring {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.84);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-hairline);
@@ -238,9 +234,8 @@ body.cursor-hover .cursor-ring {
 }
 
 .brand-sep {
-  color: var(--accent-purple-light);
+  color: var(--accent-purple-soft);
   font-size: 0.82rem;
-  text-shadow: 0 0 10px rgba(116, 84, 130, 0.6);
 }
 
 .brand-lab {
@@ -255,12 +250,11 @@ body.cursor-hover .cursor-ring {
   letter-spacing: 0.14em;
   color: #A885B8;
   text-align: right;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .nav-statement:hover {
   color: #D2B7E3;
-  text-shadow: 0 0 12px rgba(116, 84, 130, 0.5);
 }
 
 /* ── Main Layout Container ───────────────────────────────────────────────── */
@@ -272,7 +266,7 @@ body.cursor-hover .cursor-ring {
   padding: 0 2rem;
 }
 
-/* ── Separator (Editorial Hairline with Visible #745482 Glow) ───────────── */
+/* ── Separator (Clean Crisp Hairline, No Glow) ─────────────────────────── */
 .sep {
   width: 100%;
   max-width: var(--container-max);
@@ -280,12 +274,11 @@ body.cursor-hover .cursor-ring {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(116, 84, 130, 0.65) 20%,
-    #EAEAEA 50%,
-    rgba(116, 84, 130, 0.65) 80%,
+    rgba(116, 84, 130, 0.45) 20%,
+    #D4D4D8 50%,
+    rgba(116, 84, 130, 0.45) 80%,
     rgba(255, 255, 255, 0) 100%
   );
-  box-shadow: 0 0 14px rgba(116, 84, 130, 0.4);
   margin: 5.5rem auto;
   opacity: 0;
   transform: scaleX(0);
@@ -354,7 +347,7 @@ body.cursor-hover .cursor-ring {
   min-height: 480px;
 }
 
-/* Falcon Schematic: Sits mathematically centered behind typography */
+/* Falcon Schematic: Clean vector behind typography, no drop-shadow glow */
 .falcon-visual-wrap {
   position: absolute;
   inset: 0;
@@ -369,11 +362,10 @@ body.cursor-hover .cursor-ring {
   opacity: 0;
   transition: opacity 1.4s var(--easing-editorial);
   z-index: 1;
-  filter: drop-shadow(0 0 55px rgba(116, 84, 130, 0.18));
 }
 
 .falcon-visual-wrap.visible {
-  opacity: 0.75;
+  opacity: 0.72;
 }
 
 .falcon-svg {
@@ -405,7 +397,7 @@ body.cursor-hover .cursor-ring {
   }
 }
 
-/* Hero Typography: Large, Sculptural, Memorable */
+/* Hero Typography: Large, Crisp, Clean */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -426,20 +418,18 @@ body.cursor-hover .cursor-ring {
   line-height: 0.92;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 70px rgba(0, 0, 0, 0.9), 0 0 45px rgba(116, 84, 130, 0.25);
   user-select: none;
   white-space: nowrap;
 }
 
 .title-char {
   display: inline-block;
-  transition: transform 0.4s var(--easing-subtle), color 0.4s ease, text-shadow 0.4s ease;
+  transition: transform 0.4s var(--easing-subtle), color 0.4s ease;
 }
 
 .title-char:hover {
   transform: translateY(-4px);
   color: #FFFFFF;
-  text-shadow: 0 0 20px rgba(184, 146, 204, 0.6);
 }
 
 .hero-subline {
@@ -523,7 +513,7 @@ body.cursor-hover .cursor-ring {
   letter-spacing: 0.22em;
   color: var(--text-dim);
   margin: 0 auto 3.2rem;
-  border-bottom: 1px solid rgba(116, 84, 130, 0.35);
+  border-bottom: 1px solid rgba(116, 84, 130, 0.3);
   padding-bottom: 0.6rem;
   max-width: 320px;
   text-align: center;
@@ -551,12 +541,11 @@ body.cursor-hover .cursor-ring {
   border: 1px solid rgba(116, 84, 130, 0.28);
   border-radius: 2px;
   overflow: hidden;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: border-color 0.3s ease;
 }
 
 .network-canvas-wrapper:hover {
   border-color: var(--accent-purple-border);
-  box-shadow: 0 0 25px rgba(116, 84, 130, 0.15);
 }
 
 #networkCanvas {
@@ -576,9 +565,9 @@ body.cursor-hover .cursor-ring {
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   color: var(--text-dim);
-  background: rgba(10, 10, 10, 0.88);
+  background: rgba(10, 10, 10, 0.9);
   padding: 0.3rem 0.6rem;
-  border: 1px solid rgba(116, 84, 130, 0.35);
+  border: 1px solid rgba(116, 84, 130, 0.3);
   pointer-events: none;
 }
 
@@ -615,8 +604,7 @@ body.cursor-hover .cursor-ring {
 }
 
 .statement-line.accent-glow {
-  color: #E6DCED;
-  text-shadow: 0 0 25px rgba(116, 84, 130, 0.7), 0 0 50px rgba(116, 84, 130, 0.3);
+  color: var(--accent-purple-light);
 }
 
 .statement-notes {
@@ -702,13 +690,12 @@ body.cursor-hover .cursor-ring {
   background: rgba(116, 84, 130, 0.08);
   padding: 0.4rem 1rem;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .strip-code:hover {
   border-color: #745482;
   background: rgba(116, 84, 130, 0.18);
-  box-shadow: 0 0 15px rgba(116, 84, 130, 0.3);
   color: #FFFFFF;
 }
 
@@ -756,10 +743,9 @@ body.cursor-hover .cursor-ring {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.2em;
-  color: #EFEBF3;
-  background: rgba(116, 84, 130, 0.12);
+  color: #EAEAEA;
+  background: rgba(116, 84, 130, 0.1);
   border: 1px solid var(--accent-purple-border);
-  box-shadow: 0 0 22px rgba(116, 84, 130, 0.25);
   padding: 0.45rem 1.25rem;
   border-radius: 999px;
 }
@@ -768,8 +754,7 @@ body.cursor-hover .cursor-ring {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #D2B7E3;
-  box-shadow: 0 0 10px #745482, 0 0 4px #FFFFFF;
+  background-color: var(--accent-purple-light);
 }
 
 /* Technical Telemetry Card */
@@ -777,11 +762,11 @@ body.cursor-hover .cursor-ring {
   width: 100%;
   max-width: 720px;
   background: var(--bg-card);
-  border: 1px solid rgba(116, 84, 130, 0.25);
+  border: 1px solid rgba(116, 84, 130, 0.22);
   border-radius: 3px;
   text-align: left;
   margin: 1.5rem auto;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(116, 84, 130, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -791,8 +776,8 @@ body.cursor-hover .cursor-ring {
   align-items: center;
   gap: 0.45rem;
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid rgba(116, 84, 130, 0.2);
-  background: rgba(116, 84, 130, 0.06);
+  border-bottom: 1px solid rgba(116, 84, 130, 0.18);
+  background: rgba(116, 84, 130, 0.05);
 }
 
 .card-dot {
@@ -804,7 +789,6 @@ body.cursor-hover .cursor-ring {
 
 .card-dot:nth-child(1) {
   background-color: #745482;
-  box-shadow: 0 0 8px #745482;
 }
 
 .card-title {
@@ -852,8 +836,7 @@ body.cursor-hover .cursor-ring {
 }
 
 .highlight-val {
-  color: #E3D4EC;
-  text-shadow: 0 0 12px rgba(116, 84, 130, 0.4);
+  color: #E2D5EA;
 }
 
 .closing-whisper {
@@ -868,7 +851,7 @@ body.cursor-hover .cursor-ring {
 
 /* ── FOOTER ──────────────────────────────────────────────────────────────── */
 .site-footer {
-  border-top: 1px solid rgba(116, 84, 130, 0.22);
+  border-top: 1px solid rgba(116, 84, 130, 0.2);
   background: var(--bg-primary);
   position: relative;
   z-index: 10;
@@ -1067,7 +1050,6 @@ body.cursor-hover .cursor-ring {
     gap: 0.8rem;
   }
 
-  /* User requirement: "remove 'maybe everything...' from navbar at mobile view." */
   .nav-statement {
     display: none !important;
   }
@@ -1103,7 +1085,7 @@ body.cursor-hover .cursor-ring {
   }
 
   .hero-meta-top .mono-tag-right {
-    display: none; /* Loose unneeded text on mobile */
+    display: none;
   }
 
   .hero-stage {
@@ -1111,7 +1093,6 @@ body.cursor-hover .cursor-ring {
     padding: 1.5rem 0;
   }
 
-  /* User requirement: "the falcon diagram a bit bigger." */
   .falcon-visual-wrap {
     width: 100%;
     max-width: 520px;
@@ -1124,7 +1105,6 @@ body.cursor-hover .cursor-ring {
     opacity: 0.52;
   }
 
-  /* User requirement: "keep the merlin text big." */
   .hero-title {
     font-size: clamp(3.8rem, 17vw, 5.8rem);
     letter-spacing: -0.025em;
@@ -1153,7 +1133,7 @@ body.cursor-hover .cursor-ring {
   }
 
   .hero-meta-bottom .meta-col:nth-child(2) {
-    display: none; /* Hide middle col on mobile to prevent clutter */
+    display: none;
   }
 
   .scroll-indicator {
@@ -1313,7 +1293,6 @@ body.cursor-hover .cursor-ring {
     padding: 1rem 0;
   }
 
-  /* Bigger Falcon on Small Mobile */
   .falcon-visual-wrap {
     max-width: 420px;
   }
@@ -1324,7 +1303,6 @@ body.cursor-hover .cursor-ring {
     opacity: 0.5;
   }
 
-  /* Kept MERLIN Big on Small Mobile */
   .hero-title {
     font-size: clamp(3.4rem, 16.5vw, 4.6rem);
   }
@@ -1370,7 +1348,7 @@ body.cursor-hover .cursor-ring {
   }
 
   .falcon-visual-wrap {
-    opacity: 0.75 !important;
+    opacity: 0.72 !important;
     transition: none !important;
   }
 
