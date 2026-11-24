@@ -1,50 +1,47 @@
-# MERLIN — A Falacy Labs Product
+# MERLIN
 
-> Multi-node Edge Runtime for Language-model Inference Networks.  
-> *A small falcon. Intelligence, without a centre.*
+> *Intelligence, without a centre.*
 
-A minimal, editorial, and atmospheric pre-launch landing page for **MERLIN**, a decentralized AI inference network by **Falacy Labs**.
-
----
-
-## Design Philosophy
-
-- **Anticipation over explanation**: The landing page creates an aura of technical sophistication, quiet authority, and anticipation.
-- **Editorial & Monochromatic**: Restrained monochromatic palette (`#0A0A0A`, `#EAEAEA`, `#888888`, `#383838`) paired with high-contrast editorial typography (`Instrument Serif`, `Inter`, `Space Mono`).
-- **Aerodynamic Falcon Vector**: Technical fine-line schematic of *Falco columbarius* (the Merlin falcon) representing the distributed, agile edge computing model.
-- **Ambient Distributed Network**: Subtle, interactive HTML5 canvas simulation representing peer-to-peer compute nodes and token transmission (optimized for desktop/tablet; disabled on mobile view for focus and efficiency).
-- **Multi-Device Responsive Precision**: Custom layout treatments tailored across Mobile (< 768px), Tablet (769px–1024px), Desktop (1025px–1599px), and Ultra-Wide/TV/4K (1600px+).
+MERLIN is a decentralized AI inference network being built by **Falacy Labs**.
 
 ---
 
-## Project Structure
+### What is MERLIN?
 
+Today, almost all artificial intelligence runs inside massive, centralized corporate data centers — closed, monolithic, and far away.
+
+MERLIN is an experiment in doing things differently: sharing language-model compute across a quiet, distributed network of everyday devices. Instead of relying on a single mega-cluster, intelligence runs collectively across machines working together as one unified fabric.
+
+One model.  
+Many devices.  
+A shared intelligence.
+
+---
+
+### Why the falcon?
+
+The Merlin (*Falco columbarius*) is one of the smallest falcons in the world. It doesn't rely on brute mass or giant wings — it survives and hunts through speed, agility, and precision maneuvering. That spirit defines MERLIN: lightweight edge nodes outperforming bulky centralized monoliths through coordination.
+
+---
+
+### Current Status
+
+MERLIN is in early development at Falacy Labs. Something is quietly taking shape.
+
+---
+
+### Preview
+
+This landing page is built simply and cleanly with pure HTML, CSS, and vanilla JavaScript — no frameworks, no build tools, no tracking.
+
+You can preview it directly by opening `index.html` in any browser, or by running a local server:
+
+```bash
+python3 -m http.server 8000
 ```
-merlin_lander/
-├── index.html        # Semantic HTML5 structure
-├── style.css         # Pure CSS3 styling, responsive layouts & animations
-├── script.js         # Vanilla JavaScript (Network simulation, cursor, parallax, reveals)
-└── assets/
-    ├── falcon.svg    # Vector technical schematic of the Merlin falcon
-    └── favicon.svg   # Favicon
-```
+
+Then visit [http://localhost:8000](http://localhost:8000).
 
 ---
 
-## Technical Specifications
-
-- **Tech Stack**: Pure HTML5, CSS3, Vanilla JavaScript (ES6+).
-- **Frameworks**: None (Zero React, Next.js, Vue, Tailwind, or Bootstrap).
-- **Dependencies**: None.
-- **Performance**: 60fps canvas animation with automatic viewport observation (`IntersectionObserver`) to conserve CPU/battery when scrolled out of view. Automatically deactivated on mobile screens.
-- **Accessibility**: Full `prefers-reduced-motion` support.
-
----
-
-## Deployment
-
-The repository is 100% static and can be deployed directly:
-
-- **GitHub Pages**: Settings -> Pages -> Deploy from branch `main` / root.
-- **Cloudflare Pages**: Connect Git repository, set build command to empty, output directory to `.`.
-- **Vercel**: Import repository as a static project.
+© Falacy Labs
