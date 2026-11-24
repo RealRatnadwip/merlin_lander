@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MERLIN — Multi-node Edge Runtime for Language-model Inference Networks</title>
+  <meta name="description" content="MERLIN: A decentralized AI inference network. Intelligence, without a centre. A small falcon." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="MERLIN — A Network in the Making" />
+  <meta property="og:description" content="Multi-node Edge Runtime for Language-model Inference Networks. Intelligence, without a centre." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Typography: Instrument Serif, Inter, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Atmosphere: Monochrome Drift Orbs -->
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- Subtle Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Fluid Cursor (Desktop) -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Top Navigation -->
+  <header class="nav-header">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#hero" class="nav-brand" aria-label="MERLIN home">
+          <span class="brand-text">MERLIN</span>
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <div class="status-indicator" title="Current status: In Development">
+          <span class="status-pulse"></span>
+          <span class="status-label">IN DEVELOPMENT</span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <span class="nav-statement">A NETWORK IN THE MAKING</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Flow -->
+  <main class="page-container">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-meta-top reveal-item">
+        <span class="mono-tag">[ SYS_01 // 0x4D45524C494E ]</span>
+        <span class="mono-tag-right">DECENTRALIZED COMPUTE FABRIC</span>
+      </div>
+
+      <div class="hero-stage">
+        <!-- Visual Falcon Schematic Integrated Beside / Behind the Wordmark -->
+        <div class="falcon-visual-wrap reveal-item" id="falconWrap" aria-hidden="true">
+          <svg viewBox="0 0 900 480" fill="none" class="falcon-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="falconStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+                <stop offset="45%" stop-color="#D4D4D8" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#777777" stop-opacity="0.12"/>
+              </linearGradient>
+              <linearGradient id="featherFacet" x1="0%" y1="0%" x2="100%" y2="60%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.005"/>
+              </linearGradient>
+              <radialGradient id="falconAura" cx="42%" cy="46%" r="52%">
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+                <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.015"/>
+                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Background Aura Glow -->
+            <ellipse cx="430" cy="230" rx="300" ry="170" fill="url(#falconAura)" />
+
+            <!-- Technical Coordinate Guides -->
+            <g class="tech-grid" stroke="rgba(255,255,255,0.06)" stroke-width="0.65">
+              <line x1="50" y1="230" x2="850" y2="230" stroke-dasharray="3 6" />
+              <line x1="420" y1="30" x2="420" y2="450" stroke-dasharray="3 6" />
+              <circle cx="420" cy="230" r="170" stroke-dasharray="2 8" />
+              <circle cx="420" cy="230" r="85" stroke-dasharray="1 6" />
+            </g>
+
+            <!-- Aerodynamic Vector Streamlines -->
+            <g stroke="rgba(255,255,255,0.12)" stroke-width="0.75" fill="none">
+              <path d="M 140,230 C 250,200 370,80 640,62" stroke-dasharray="3 7" />
+              <path d="M 190,245 C 310,245 470,340 600,385" stroke-dasharray="3 7" />
+              <path d="M 160,235 C 320,235 480,230 680,232" stroke-dasharray="1 9" />
+            </g>
+
+            <!-- Upper Wing Facets (High Aspect Ratio Airfoil) -->
+            <g class="wing-upper">
+              <path d="M 330,200 C 375,155 465,95 640,62" stroke="#EAEAEA" stroke-width="1.2" />
+              <polygon points="330,200 440,140 640,62 550,115" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="440,140 550,115 500,150 410,185" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="550,115 640,62 585,120 535,145" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="410,185 500,150 460,180 380,210" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="460,180 500,150 535,145 490,175" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="490,175 535,145 585,120 545,160" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+            </g>
+
+            <!-- Lower Wing (Banked Wing) -->
+            <g class="wing-lower">
+              <path d="M 350,235 C 415,275 495,345 600,385" stroke="#EAEAEA" stroke-width="1.1" />
+              <polygon points="350,235 440,285 600,385 525,335" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="440,285 525,335 470,305 400,255" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="525,335 600,385 555,355 500,325" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="400,255 470,305 435,275 375,245" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+            </g>
+
+            <!-- Falcon Head & Rostrum -->
+            <g class="head-group">
+              <path d="M 270,182 C 240,192 208,206 182,216" stroke="#FFFFFF" stroke-width="1.2" />
+              <path d="M 182,216 C 174,222 178,230 186,231 C 196,229 214,228 235,232" fill="rgba(255,255,255,0.18)" stroke="#FFFFFF" stroke-width="1.1" />
+              <path d="M 235,232 C 270,240 310,246 345,240" stroke="url(#falconStroke)" stroke-width="1" />
+              <polygon points="270,182 225,208 182,216 235,232 290,220" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <polygon points="270,182 290,220 345,215 330,195" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+              <!-- Eye / Sensor -->
+              <circle cx="248" cy="206" r="3.5" fill="#FFFFFF" />
+              <circle cx="248" cy="206" r="7" stroke="rgba(255,255,255,0.4)" stroke-width="0.6" stroke-dasharray="1.5 2" />
+            </g>
+
+            <!-- Fuselage -->
+            <g class="fuselage-group">
+              <polygon points="345,215 390,215 435,225 395,235 345,230" fill="rgba(255,255,255,0.06)" stroke="url(#falconStroke)" stroke-width="0.8" />
+              <polygon points="390,215 450,220 480,226 435,225" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+              <polygon points="435,225 480,226 455,232 395,235" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+            </g>
+
+            <!-- Tail (Rectrices) -->
+            <g class="tail-group">
+              <polygon points="480,226 660,220 675,232 455,232" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+              <polygon points="455,232 675,232 665,244 470,236" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+              <line x1="560" y1="223" x2="560" y2="238" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3" />
+              <line x1="610" y1="222" x2="610" y2="241" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3" />
+              <line x1="655" y1="221" x2="655" y2="243" stroke="#FFFFFF" stroke-width="1.2" />
+            </g>
+
+            <!-- Distributed Edge Nodes -->
+            <g class="active-nodes">
+              <!-- Apex Node -->
+              <g class="pulse-node" transform="translate(640, 62)">
+                <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
+                <circle cx="0" cy="0" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="0.75" class="halo" />
+              </g>
+              <!-- Ventral Node -->
+              <g class="pulse-node" transform="translate(600, 385)">
+                <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
+                <circle cx="0" cy="0" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="0.75" class="halo" />
+              </g>
+              <!-- Beak Node -->
+              <g class="pulse-node" transform="translate(182, 216)">
+                <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+                <circle cx="0" cy="0" r="7" stroke="rgba(255,255,255,0.35)" stroke-width="0.6" class="halo" />
+              </g>
+              <!-- Core Hub Node -->
+              <g class="pulse-node" transform="translate(390, 225)">
+                <circle cx="0" cy="0" r="4.5" fill="#FFFFFF" />
+                <circle cx="0" cy="0" r="11" stroke="rgba(255,255,255,0.45)" stroke-width="0.8" class="halo" />
+              </g>
+              <!-- Tail Node -->
+              <g class="pulse-node" transform="translate(675, 232)">
+                <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+                <circle cx="0" cy="0" r="8" stroke="rgba(255,255,255,0.35)" stroke-width="0.6" class="halo" />
+              </g>
+            </g>
+
+            <!-- Technical Coordinate Microtext -->
+            <g font-family="'Space Mono', monospace" font-size="8" fill="#777777" letter-spacing="1.2">
+              <text x="655" y="60">NODE_01 // 640.62</text>
+              <text x="615" y="398">NODE_02 // 600.38</text>
+              <text x="110" y="214">NODE_00 // ROSTRUM</text>
+              <text x="690" y="236">NODE_03 // CAUDA</text>
+              <text x="365" y="260">FALCO COLUMBARIUS</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Typography Core -->
+        <div class="hero-content">
+          <h1 class="hero-title reveal-item" id="heroTitle">
+            <span class="title-char">M</span><span class="title-char">E</span><span class="title-char">R</span><span class="title-char">L</span><span class="title-char">I</span><span class="title-char">N</span>
+          </h1>
+
+          <div class="hero-subline reveal-item">
+            <p class="symbolism-line"><em>A small falcon.</em></p>
+            <p class="tagline">Intelligence, without a centre.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Telemetry -->
+      <div class="hero-meta-bottom reveal-item">
+        <div class="meta-col">
+          <span class="meta-label">ARCHITECTURE</span>
+          <span class="meta-val">MULTI-NODE EDGE RUNTIME</span>
+        </div>
+        <div class="meta-col">
+          <span class="meta-label">TOPOLOGY</span>
+          <span class="meta-val">ZERO-COORDINATOR MESH</span>
+        </div>
+        <div class="meta-col scroll-indicator">
+          <span class="meta-label">DISCOVER</span>
+          <span class="meta-val">SCROLL DOWN ↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hairline Divider -->
+    <div class="sep" id="sep1"></div>
+
+    <!-- THE NETWORK TEASER SECTION -->
+    <section class="section network-section" id="network">
+      <div class="section-label reveal-item">
+        <span class="mono-step">01</span>
+        <span class="label-text">THE NETWORK</span>
+      </div>
+
+      <div class="network-container">
+        <!-- Ambient Interactive Network Canvas -->
+        <div class="network-canvas-wrapper reveal-item" id="canvasContainer">
+          <canvas id="networkCanvas" aria-label="Distributed node inference network visualization"></canvas>
+          <div class="canvas-annotation">
+            <span class="mono-pulse">●</span>
+            <span>ACTIVE EDGE PEERS SIMULATOR</span>
+          </div>
+        </div>
+
+        <!-- Conceptual Statement -->
+        <div class="network-statement reveal-item">
+          <div class="statement-trio">
+            <div class="statement-line" data-index="1">One model.</div>
+            <div class="statement-line" data-index="2">Many devices.</div>
+            <div class="statement-line accent-glow" data-index="3">A shared intelligence.</div>
+          </div>
+
+          <div class="statement-notes">
+            <p class="note-line">
+              Language models severed from massive centralized data centers.
+            </p>
+            <p class="note-line dim">
+              Weights sharded across laptops, workstations, and edge chips, unified through an asynchronous peer-to-peer fabric.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hairline Divider -->
+    <div class="sep" id="sep2"></div>
+
+    <!-- EDITORIAL ATMOSPHERE: THE SWARM -->
+    <section class="section atmospheric-section" id="swarm">
+      <div class="section-label reveal-item">
+        <span class="mono-step">02</span>
+        <span class="label-text">LATENT COMPUTE</span>
+      </div>
+
+      <div class="editorial-prose reveal-item">
+        <p class="prose-lead">
+          The compute is already out there.
+        </p>
+        <p class="prose-body">
+          Laptops resting on desks overnight. Workstations idling between keystrokes. Edge silicon cooling in quiet rooms. Billions of arithmetic units, dormant and disconnected.
+        </p>
+        <p class="prose-body dim">
+          Merlin weaves them into an agile, cooperative organism. Like the small falcon whose flight defies its size, power emerges from velocity and coordination, not bulk.
+        </p>
+      </div>
+
+      <div class="technical-strip reveal-item">
+        <div class="strip-item">
+          <span class="strip-code">PEER_DISCOVERY</span>
+          <span class="strip-desc">Distributed Hash Ring</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-code">WEIGHT_SHARDING</span>
+          <span class="strip-desc">Dynamic Tensor Slicing</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-code">FAULT_TOLERANCE</span>
+          <span class="strip-desc">Instant Node Resiliency</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hairline Divider -->
+    <div class="sep" id="sep3"></div>
+
+    <!-- UPCOMING HORIZON SECTION -->
+    <section class="section upcoming-section" id="upcoming">
+      <div class="section-label reveal-item">
+        <span class="mono-step">03</span>
+        <span class="label-text">HORIZON</span>
+      </div>
+
+      <div class="upcoming-content reveal-item">
+        <h2 class="upcoming-heading-small">SOMETHING IS TAKING SHAPE.</h2>
+        <h3 class="upcoming-heading-large">MERLIN IS COMING.</h3>
+
+        <div class="status-badge-wrap">
+          <span class="status-badge">
+            <span class="badge-dot"></span>
+            EARLY DEVELOPMENT
+          </span>
+        </div>
+
+        <div class="telemetry-card">
+          <div class="card-header">
+            <span class="card-dot"></span>
+            <span class="card-dot"></span>
+            <span class="card-dot"></span>
+            <span class="card-title">RUNTIME SPECIFICATION // STAGE 0</span>
+          </div>
+          <div class="card-body">
+            <div class="spec-row">
+              <span class="spec-key">PROJECT</span>
+              <span class="spec-val">MERLIN (Falco columbarius)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">FULL FORM</span>
+              <span class="spec-val">MULTI-NODE EDGE RUNTIME FOR LANGUAGE-MODEL INFERENCE NETWORKS</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">NODE TOPOLOGY</span>
+              <span class="spec-val">DECENTRALIZED P2P DAG</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">TARGET ACCELERATION</span>
+              <span class="spec-val">VULKAN / METAL / CUDA / NEURAL ACCELERATORS</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">COORDINATOR</span>
+              <span class="spec-val highlight-val">NONE [STATELESS DISTRIBUTED CONSENSUS]</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="closing-whisper">
+          No centralized registration. No premature waitlists. The network will arrive when it is ready.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hairline Divider -->
+    <div class="sep" id="sep4"></div>
+
+  </main>
+
+  <!-- Understated Minimal Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-title">MERLIN</span>
+        <span class="footer-desc">— MULTI-NODE EDGE RUNTIME FOR LANGUAGE-MODEL INFERENCE NETWORKS</span>
+      </div>
+
+      <div class="footer-center">
+        <span class="footer-copy">© 2026 MERLIN</span>
+      </div>
+
+      <div class="footer-right">
+        <span class="footer-symbol">A SMALL FALCON.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla Script -->
+  <script src="script.js"></script>
+</body>
+</html>

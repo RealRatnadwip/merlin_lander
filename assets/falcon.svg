@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" fill="none" class="falcon-schematic" aria-label="Merlin falcon technical silhouette">
+  <defs>
+    <linearGradient id="falconStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="45%" stop-color="#D4D4D8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#777777" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="featherFacet" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.005"/>
+    </linearGradient>
+    <radialGradient id="falconAura" cx="42%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.015"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      text { font-family: 'Space Mono', monospace; font-size: 8px; fill: #777777; letter-spacing: 1.2px; }
+      .tech-grid { stroke: rgba(255,255,255,0.06); stroke-width: 0.65; }
+    </style>
+  </defs>
+
+  <!-- Background Aura Glow -->
+  <ellipse cx="430" cy="230" rx="300" ry="170" fill="url(#falconAura)" />
+
+  <!-- Technical Coordinate Guides -->
+  <g class="tech-grid">
+    <line x1="50" y1="230" x2="850" y2="230" stroke-dasharray="3 6" />
+    <line x1="420" y1="30" x2="420" y2="450" stroke-dasharray="3 6" />
+    <circle cx="420" cy="230" r="170" stroke-dasharray="2 8" />
+    <circle cx="420" cy="230" r="85" stroke-dasharray="1 6" />
+  </g>
+
+  <!-- Aerodynamic Vector Streamlines -->
+  <g stroke="rgba(255,255,255,0.12)" stroke-width="0.75" fill="none">
+    <path d="M 140,230 C 250,200 370,80 640,62" stroke-dasharray="3 7" />
+    <path d="M 190,245 C 310,245 470,340 600,385" stroke-dasharray="3 7" />
+    <path d="M 160,235 C 320,235 480,230 680,232" stroke-dasharray="1 9" />
+  </g>
+
+  <!-- Upper Wing Facets (High Aspect Ratio Airfoil) -->
+  <g class="wing-upper">
+    <path d="M 330,200 C 375,155 465,95 640,62" stroke="#EAEAEA" stroke-width="1.2" />
+    <polygon points="330,200 440,140 640,62 550,115" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="440,140 550,115 500,150 410,185" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="550,115 640,62 585,120 535,145" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="410,185 500,150 460,180 380,210" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="460,180 500,150 535,145 490,175" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="490,175 535,145 585,120 545,160" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+  </g>
+
+  <!-- Lower Wing (Banked Wing) -->
+  <g class="wing-lower">
+    <path d="M 350,235 C 415,275 495,345 600,385" stroke="#EAEAEA" stroke-width="1.1" />
+    <polygon points="350,235 440,285 600,385 525,335" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="440,285 525,335 470,305 400,255" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="525,335 600,385 555,355 500,325" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="400,255 470,305 435,275 375,245" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+  </g>
+
+  <!-- Falcon Head & Rostrum -->
+  <g class="head-group">
+    <path d="M 270,182 C 240,192 208,206 182,216" stroke="#FFFFFF" stroke-width="1.2" />
+    <path d="M 182,216 C 174,222 178,230 186,231 C 196,229 214,228 235,232" fill="rgba(255,255,255,0.18)" stroke="#FFFFFF" stroke-width="1.1" />
+    <path d="M 235,232 C 270,240 310,246 345,240" stroke="url(#falconStroke)" stroke-width="1" />
+    <polygon points="270,182 225,208 182,216 235,232 290,220" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <polygon points="270,182 290,220 345,215 330,195" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
+    <!-- Eye / Sensor -->
+    <circle cx="248" cy="206" r="3.5" fill="#FFFFFF" />
+    <circle cx="248" cy="206" r="7" stroke="rgba(255,255,255,0.4)" stroke-width="0.6" stroke-dasharray="1.5 2" />
+  </g>
+
+  <!-- Fuselage -->
+  <g class="fuselage-group">
+    <polygon points="345,215 390,215 435,225 395,235 345,230" fill="rgba(255,255,255,0.06)" stroke="url(#falconStroke)" stroke-width="0.8" />
+    <polygon points="390,215 450,220 480,226 435,225" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+    <polygon points="435,225 480,226 455,232 395,235" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+  </g>
+
+  <!-- Tail (Rectrices) -->
+  <g class="tail-group">
+    <polygon points="480,226 660,220 675,232 455,232" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+    <polygon points="455,232 675,232 665,244 470,236" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
+    <line x1="560" y1="223" x2="560" y2="238" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3" />
+    <line x1="610" y1="222" x2="610" y2="241" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3" />
+    <line x1="655" y1="221" x2="655" y2="243" stroke="#FFFFFF" stroke-width="1.2" />
+  </g>
+
+  <!-- Distributed Edge Nodes -->
+  <g class="active-nodes">
+    <g transform="translate(640, 62)">
+      <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="0.75" />
+    </g>
+    <g transform="translate(600, 385)">
+      <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="0.75" />
+    </g>
+    <g transform="translate(182, 216)">
+      <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="7" stroke="rgba(255,255,255,0.35)" stroke-width="0.6" />
+    </g>
+    <g transform="translate(390, 225)">
+      <circle cx="0" cy="0" r="4.5" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="11" stroke="rgba(255,255,255,0.45)" stroke-width="0.8" />
+    </g>
+    <g transform="translate(675, 232)">
+      <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="8" stroke="rgba(255,255,255,0.35)" stroke-width="0.6" />
+    </g>
+  </g>
+
+  <!-- Technical Coordinate Microtext -->
+  <g>
+    <text x="655" y="60">NODE_01 // 640.62</text>
+    <text x="615" y="398">NODE_02 // 600.38</text>
+    <text x="110" y="214">NODE_00 // ROSTRUM</text>
+    <text x="690" y="236">NODE_03 // CAUDA</text>
+    <text x="365" y="260">FALCO COLUMBARIUS</text>
+  </g>
+</svg>
