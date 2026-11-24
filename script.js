@@ -39,11 +39,11 @@
   window.addEventListener('DOMContentLoaded', () => {
     const initialElements = [
       { selector: '.hero-meta-top', delay: 100 },
-      { selector: '.falcon-visual-wrap', delay: 300 },
-      { selector: '.hero-title', delay: 450 },
-      { selector: '.hero-subline', delay: 650 },
-      { selector: '.hero-meta-bottom', delay: 850 },
-      { selector: '#sep1', delay: 1050 }
+      { selector: '.falcon-visual-wrap', delay: 250 },
+      { selector: '.hero-title', delay: 400 },
+      { selector: '.hero-subline', delay: 600 },
+      { selector: '.hero-meta-bottom', delay: 800 },
+      { selector: '#sep1', delay: 1000 }
     ];
 
     initialElements.forEach(({ selector, delay }) => {
@@ -84,7 +84,7 @@
 
     // Hover effect over interactive elements
     const hoverTargets = document.querySelectorAll(
-      'a, button, .statement-line, .title-char, .telemetry-card, .network-canvas-wrapper, .status-indicator, .brand-origin-badge'
+      'a, button, .statement-line, .title-char, .telemetry-card, .network-canvas-wrapper, .status-badge, .nav-statement'
     );
     hoverTargets.forEach((target) => {
       target.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
@@ -108,11 +108,11 @@
     requestAnimationFrame(renderCursor);
   }
 
-  /* ── 3. Falcon Schematic Interactive Parallax ─────────────────────────── */
-  const falconWrap = document.getElementById('falconWrap');
+  /* ── 3. Falcon Schematic Interactive Parallax (Desktop Only) ──────────── */
+  const falconSvg = document.getElementById('falconSvg');
   const heroSection = document.getElementById('hero');
 
-  if (falconWrap && heroSection && !prefersReducedMotion && isFinePointer) {
+  if (falconSvg && heroSection && !prefersReducedMotion && isFinePointer) {
     let targetTiltX = 0, targetTiltY = 0;
     let currentTiltX = 0, currentTiltY = 0;
 
@@ -124,9 +124,9 @@
       const normX = (e.clientX - centerX) / (rect.width / 2);
       const normY = (e.clientY - centerY) / (rect.height / 2);
 
-      // Very subtle, quiet angles (-4.5 to +4.5 degrees)
-      targetTiltX = -normY * 4.5;
-      targetTiltY = normX * 4.5;
+      // Very subtle, quiet angles (-4 to +4 degrees)
+      targetTiltX = -normY * 4.0;
+      targetTiltY = normX * 4.0;
     });
 
     heroSection.addEventListener('mouseleave', () => {
@@ -138,7 +138,7 @@
       currentTiltX += (targetTiltX - currentTiltX) * 0.08;
       currentTiltY += (targetTiltY - currentTiltY) * 0.08;
 
-      falconWrap.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg)`;
+      falconSvg.style.transform = `perspective(1000px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg)`;
       requestAnimationFrame(updateFalconTilt);
     }
     requestAnimationFrame(updateFalconTilt);
@@ -158,6 +158,7 @@
     let tokenPackets = [];
     let isCanvasVisible = false;
     let animFrameId = null;
+    let packetSeq = 0;
 
     let mouse = {
       x: null,
@@ -237,7 +238,9 @@
 
     function spawnTokenPacket(fromNode, toNode) {
       if (tokenPackets.length < 8 && Math.random() < 0.012) {
+        packetSeq++;
         tokenPackets.push({
+          id: packetSeq,
           from: fromNode,
           to: toNode,
           progress: 0,
@@ -299,7 +302,7 @@
             const mAlpha = (1 - mDist / mouse.radius) * 0.28;
 
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${mAlpha.toFixed(3)})`;
+            ctx.strokeStyle = `rgba(180, 145, 205, ${mAlpha.toFixed(3)})`;
             ctx.lineWidth = 0.75;
             ctx.moveTo(na.x, na.y);
             ctx.lineTo(mouse.x, mouse.y);
@@ -313,7 +316,7 @@
         }
       }
 
-      // 2. Draw token packets (flowing computation)
+      // 2. Draw token packets (flowing computation with subtle #745482 amethyst nuance)
       if (!prefersReducedMotion) {
         for (let k = tokenPackets.length - 1; k >= 0; k--) {
           const p = tokenPackets[k];
@@ -330,7 +333,13 @@
 
           ctx.beginPath();
           ctx.arc(curX, curY, 1.4, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 255, 255, ${packetAlpha.toFixed(2)})`;
+          
+          // Subtle #745482 twilight tint on alternating packets
+          if (p.id % 2 === 0) {
+            ctx.fillStyle = `rgba(180, 145, 205, ${packetAlpha.toFixed(2)})`;
+          } else {
+            ctx.fillStyle = `rgba(255, 255, 255, ${packetAlpha.toFixed(2)})`;
+          }
           ctx.fill();
         }
       }
@@ -405,10 +414,10 @@
 
   /* ── 5. Console Greeting (Editorial Whisper) ───────────────────────────── */
   console.log(
-    '%c MERLIN %c A FALACY LABS PRODUCT %c\n Multi-node Edge Runtime for Language-model Inference Networks\n Falco columbarius // Intelligence, without a centre.',
-    'background: #EAEAEA; color: #0A0A0A; font-weight: bold; padding: 2px 6px; font-family: monospace;',
+    '%c MERLIN %c A FALACY LABS PRODUCT %c\n Maybe Everything Remains, Long In Nostalgia\n Falco columbarius // Intelligence, without a centre.',
+    'background: #745482; color: #FFFFFF; font-weight: bold; padding: 2px 6px; font-family: monospace;',
     'background: #1A1A1A; color: #888888; padding: 2px 6px; font-family: monospace;',
-    'color: #555555; font-style: italic; font-family: sans-serif;'
+    'color: #9F84AC; font-style: italic; font-family: sans-serif;'
   );
 
 })();
