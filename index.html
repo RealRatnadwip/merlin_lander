@@ -67,43 +67,43 @@
       </div>
 
       <div class="hero-stage">
-        <!-- Visual Falcon Schematic (Enlarged & Centered Behind the Wordmark) -->
+        <!-- Visual Falcon Schematic (Enlarged with #745482 Twilight Resonance) -->
         <div class="falcon-visual-wrap" id="falconWrap" aria-hidden="true">
           <svg viewBox="0 0 900 480" fill="none" class="falcon-svg" id="falconSvg" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="falconStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.88"/>
-                <stop offset="45%" stop-color="#D4D4D8" stop-opacity="0.5"/>
-                <stop offset="100%" stop-color="#745482" stop-opacity="0.22"/>
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+                <stop offset="40%" stop-color="#D4D4D8" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#745482" stop-opacity="0.45"/>
               </linearGradient>
               <linearGradient id="featherFacet" x1="0%" y1="0%" x2="100%" y2="60%">
-                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.06"/>
-                <stop offset="60%" stop-color="#745482" stop-opacity="0.025"/>
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.07"/>
+                <stop offset="55%" stop-color="#745482" stop-opacity="0.05"/>
                 <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.005"/>
               </linearGradient>
               <radialGradient id="falconAura" cx="42%" cy="46%" r="52%">
-                <stop offset="0%" stop-color="#745482" stop-opacity="0.14"/>
-                <stop offset="50%" stop-color="#745482" stop-opacity="0.04"/>
-                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+                <stop offset="0%" stop-color="#745482" stop-opacity="0.26"/>
+                <stop offset="45%" stop-color="#745482" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#745482" stop-opacity="0"/>
               </radialGradient>
             </defs>
 
             <!-- Background Twilight Aura Glow -->
-            <ellipse cx="430" cy="230" rx="310" ry="175" fill="url(#falconAura)" />
+            <ellipse cx="430" cy="230" rx="320" ry="180" fill="url(#falconAura)" />
 
             <!-- Technical Coordinate Guides -->
             <g class="tech-grid" stroke="rgba(255,255,255,0.06)" stroke-width="0.65">
               <line x1="40" y1="230" x2="860" y2="230" stroke-dasharray="3 6" />
               <line x1="420" y1="25" x2="420" y2="455" stroke-dasharray="3 6" />
-              <circle cx="420" cy="230" r="175" stroke-dasharray="2 8" />
-              <circle cx="420" cy="230" r="88" stroke-dasharray="1 6" stroke="rgba(116, 84, 130, 0.2)" />
+              <circle cx="420" cy="230" r="175" stroke-dasharray="2 8" stroke="rgba(116, 84, 130, 0.35)" />
+              <circle cx="420" cy="230" r="88" stroke-dasharray="1 6" stroke="rgba(116, 84, 130, 0.4)" />
             </g>
 
-            <!-- Aerodynamic Vector Streamlines -->
-            <g stroke="rgba(255,255,255,0.12)" stroke-width="0.75" fill="none">
-              <path d="M 130,230 C 245,200 370,80 645,62" stroke-dasharray="3 7" />
-              <path d="M 180,245 C 305,245 470,340 605,385" stroke-dasharray="3 7" stroke="rgba(116, 84, 130, 0.25)" />
-              <path d="M 150,235 C 315,235 480,230 685,232" stroke-dasharray="1 9" />
+            <!-- Aerodynamic Vector Streamlines (Delicate #745482 Hairlines) -->
+            <g stroke-width="0.85" fill="none">
+              <path d="M 130,230 C 245,200 370,80 645,62" stroke-dasharray="3 7" stroke="rgba(164, 125, 185, 0.5)" />
+              <path d="M 180,245 C 305,245 470,340 605,385" stroke-dasharray="3 7" stroke="#745482" opacity="0.65" />
+              <path d="M 150,235 C 315,235 480,230 685,232" stroke-dasharray="1 9" stroke="rgba(255,255,255,0.15)" />
             </g>
 
             <!-- Upper Wing Facets (High Aspect Ratio Airfoil) -->
@@ -133,9 +133,9 @@
               <path d="M 235,232 C 270,240 310,246 345,240" stroke="url(#falconStroke)" stroke-width="1" />
               <polygon points="270,182 225,208 182,216 235,232 290,220" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
               <polygon points="270,182 290,220 345,215 330,195" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.75" />
-              <!-- Eye / Sensor -->
+              <!-- Eye / Sensor with Violet Reticle -->
               <circle cx="248" cy="206" r="3.5" fill="#FFFFFF" />
-              <circle cx="248" cy="206" r="7" stroke="rgba(116, 84, 130, 0.5)" stroke-width="0.6" stroke-dasharray="1.5 2" />
+              <circle cx="248" cy="206" r="7" stroke="#745482" stroke-width="0.75" stroke-dasharray="1.5 2" />
             </g>
 
             <!-- Fuselage -->
@@ -149,48 +149,48 @@
             <g class="tail-group">
               <polygon points="480,226 660,220 675,232 455,232" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
               <polygon points="455,232 675,232 665,244 470,236" fill="url(#featherFacet)" stroke="url(#falconStroke)" stroke-width="0.8" />
-              <line x1="560" y1="223" x2="560" y2="238" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3" />
-              <line x1="610" y1="222" x2="610" y2="241" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-dasharray="2 3" />
+              <line x1="560" y1="223" x2="560" y2="238" stroke="rgba(116, 84, 130, 0.45)" stroke-width="1" stroke-dasharray="2 3" />
+              <line x1="610" y1="222" x2="610" y2="241" stroke="rgba(116, 84, 130, 0.45)" stroke-width="1" stroke-dasharray="2 3" />
               <line x1="655" y1="221" x2="655" y2="243" stroke="#FFFFFF" stroke-width="1.2" />
             </g>
 
-            <!-- Distributed Edge Nodes -->
+            <!-- Distributed Edge Nodes with #745482 Glow Halos -->
             <g class="active-nodes">
               <!-- Apex Node -->
               <g class="pulse-node" transform="translate(640, 62)">
                 <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
-                <circle cx="0" cy="0" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="0.75" class="halo" />
+                <circle cx="0" cy="0" r="9" stroke="rgba(164, 125, 185, 0.6)" stroke-width="0.8" class="halo" />
               </g>
               <!-- Ventral Node -->
               <g class="pulse-node" transform="translate(600, 385)">
                 <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
-                <circle cx="0" cy="0" r="9" stroke="rgba(255,255,255,0.4)" stroke-width="0.75" class="halo" />
+                <circle cx="0" cy="0" r="9" stroke="rgba(164, 125, 185, 0.6)" stroke-width="0.8" class="halo" />
               </g>
               <!-- Beak Node -->
               <g class="pulse-node" transform="translate(182, 216)">
                 <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
-                <circle cx="0" cy="0" r="7" stroke="rgba(255,255,255,0.35)" stroke-width="0.6" class="halo" />
+                <circle cx="0" cy="0" r="7" stroke="rgba(255,255,255,0.4)" stroke-width="0.6" class="halo" />
               </g>
               <!-- Core Hub Node (Subtle Twilight Ring) -->
               <g class="pulse-node" transform="translate(390, 225)">
                 <circle cx="0" cy="0" r="4.5" fill="#FFFFFF" />
-                <circle cx="0" cy="0" r="11" stroke="#745482" stroke-width="0.9" class="halo" />
-                <circle cx="0" cy="0" r="20" stroke="rgba(116, 84, 130, 0.25)" stroke-width="0.5" stroke-dasharray="2 3" />
+                <circle cx="0" cy="0" r="11" stroke="#9F84AC" stroke-width="1.1" class="halo" />
+                <circle cx="0" cy="0" r="22" stroke="rgba(116, 84, 130, 0.45)" stroke-width="0.65" stroke-dasharray="2 3" />
               </g>
               <!-- Tail Node -->
               <g class="pulse-node" transform="translate(675, 232)">
                 <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
-                <circle cx="0" cy="0" r="8" stroke="rgba(255,255,255,0.35)" stroke-width="0.6" class="halo" />
+                <circle cx="0" cy="0" r="8" stroke="rgba(164, 125, 185, 0.55)" stroke-width="0.7" class="halo" />
               </g>
             </g>
 
             <!-- Technical Coordinate Microtext -->
-            <g font-family="'Space Mono', monospace" font-size="8" fill="#777777" letter-spacing="1.2">
-              <text x="655" y="60">NODE_01 // 640.62</text>
-              <text x="615" y="398">NODE_02 // 600.38</text>
-              <text x="110" y="214">NODE_00 // ROSTRUM</text>
-              <text x="690" y="236">NODE_03 // CAUDA</text>
-              <text x="365" y="260" fill="#9F84AC">FALCO COLUMBARIUS</text>
+            <g font-family="'Space Mono', monospace" font-size="8" letter-spacing="1.2">
+              <text x="655" y="60" fill="#B494C4">NODE_01 // 640.62</text>
+              <text x="615" y="398" fill="#B494C4">NODE_02 // 600.38</text>
+              <text x="110" y="214" fill="#777777">NODE_00 // ROSTRUM</text>
+              <text x="690" y="236" fill="#777777">NODE_03 // CAUDA</text>
+              <text x="365" y="260" fill="#C4A5D8">FALCO COLUMBARIUS</text>
             </g>
           </svg>
         </div>

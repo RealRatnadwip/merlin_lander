@@ -84,7 +84,7 @@
 
     // Hover effect over interactive elements
     const hoverTargets = document.querySelectorAll(
-      'a, button, .statement-line, .title-char, .telemetry-card, .network-canvas-wrapper, .status-badge, .nav-statement'
+      'a, button, .statement-line, .title-char, .telemetry-card, .network-canvas-wrapper, .status-badge, .nav-statement, .strip-code'
     );
     hoverTargets.forEach((target) => {
       target.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
@@ -237,7 +237,7 @@
     });
 
     function spawnTokenPacket(fromNode, toNode) {
-      if (tokenPackets.length < 8 && Math.random() < 0.012) {
+      if (tokenPackets.length < 9 && Math.random() < 0.014) {
         packetSeq++;
         tokenPackets.push({
           id: packetSeq,
@@ -299,11 +299,11 @@
 
           if (mDistSq < mouseRadiusSq) {
             const mDist = Math.sqrt(mDistSq);
-            const mAlpha = (1 - mDist / mouse.radius) * 0.28;
+            const mAlpha = (1 - mDist / mouse.radius) * 0.32;
 
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(180, 145, 205, ${mAlpha.toFixed(3)})`;
-            ctx.lineWidth = 0.75;
+            ctx.strokeStyle = `rgba(184, 146, 204, ${mAlpha.toFixed(3)})`;
+            ctx.lineWidth = 0.85;
             ctx.moveTo(na.x, na.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
@@ -316,7 +316,7 @@
         }
       }
 
-      // 2. Draw token packets (flowing computation with subtle #745482 amethyst nuance)
+      // 2. Draw token packets (flowing computation with #745482 amethyst luminescence)
       if (!prefersReducedMotion) {
         for (let k = tokenPackets.length - 1; k >= 0; k--) {
           const p = tokenPackets[k];
@@ -329,18 +329,22 @@
 
           const curX = p.from.x + (p.to.x - p.from.x) * p.progress;
           const curY = p.from.y + (p.to.y - p.from.y) * p.progress;
-          const packetAlpha = Math.sin(p.progress * Math.PI) * 0.75;
+          const packetAlpha = Math.sin(p.progress * Math.PI) * 0.85;
 
           ctx.beginPath();
-          ctx.arc(curX, curY, 1.4, 0, Math.PI * 2);
+          ctx.arc(curX, curY, 1.6, 0, Math.PI * 2);
           
-          // Subtle #745482 twilight tint on alternating packets
-          if (p.id % 2 === 0) {
-            ctx.fillStyle = `rgba(180, 145, 205, ${packetAlpha.toFixed(2)})`;
+          // Twilight amethyst tint on alternating packets with subtle glow
+          if (p.id % 3 !== 0) {
+            ctx.fillStyle = `rgba(195, 158, 220, ${packetAlpha.toFixed(2)})`;
+            ctx.shadowColor = 'rgba(116, 84, 130, 0.7)';
+            ctx.shadowBlur = 5;
           } else {
             ctx.fillStyle = `rgba(255, 255, 255, ${packetAlpha.toFixed(2)})`;
+            ctx.shadowBlur = 0;
           }
           ctx.fill();
+          ctx.shadowBlur = 0;
         }
       }
 
@@ -417,7 +421,7 @@
     '%c MERLIN %c A FALACY LABS PRODUCT %c\n Maybe Everything Remains, Long In Nostalgia\n Falco columbarius // Intelligence, without a centre.',
     'background: #745482; color: #FFFFFF; font-weight: bold; padding: 2px 6px; font-family: monospace;',
     'background: #1A1A1A; color: #888888; padding: 2px 6px; font-family: monospace;',
-    'color: #9F84AC; font-style: italic; font-family: sans-serif;'
+    'color: #B892CC; font-style: italic; font-family: sans-serif;'
   );
 
 })();
