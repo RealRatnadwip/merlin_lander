@@ -1073,6 +1073,7 @@ body.cursor-hover .cursor-ring {
     padding-bottom: 1.8rem;
     min-height: calc(100vh - 1rem);
     min-height: calc(100svh - 1rem);
+    overflow: hidden;
   }
 
   .hero-meta-top {
@@ -1080,7 +1081,7 @@ body.cursor-hover .cursor-ring {
     justify-content: center;
     text-align: center;
     padding-bottom: 0.85rem;
-    font-size: 0.64rem;
+    font-size: 0.68rem;
     letter-spacing: 0.14em;
   }
 
@@ -1089,36 +1090,46 @@ body.cursor-hover .cursor-ring {
   }
 
   .hero-stage {
-    min-height: 320px;
-    padding: 1.5rem 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    padding: 1.8rem 0;
+    position: relative;
+    overflow: visible;
   }
 
   .falcon-visual-wrap {
     width: 100%;
-    max-width: 520px;
+    max-width: 720px;
     height: 100%;
+    overflow: visible;
   }
 
   .falcon-svg {
-    max-width: 500px;
-    max-height: 320px;
-    opacity: 0.52;
+    width: 125%;
+    max-width: 680px;
+    min-width: 480px;
+    max-height: 360px;
+    opacity: 0.85;
   }
 
   .hero-title {
-    font-size: clamp(3.8rem, 17vw, 5.8rem);
+    font-size: clamp(4.6rem, 19.5vw, 7.2rem);
     letter-spacing: -0.025em;
-    line-height: 0.95;
-    margin-bottom: 1.1rem;
+    line-height: 0.92;
+    margin-bottom: 1.25rem;
     white-space: nowrap;
   }
 
   .symbolism-line {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.35rem;
   }
 
   .tagline {
-    font-size: 0.92rem;
+    font-size: 0.96rem;
     letter-spacing: 0.05em;
   }
 
@@ -1289,30 +1300,45 @@ body.cursor-hover .cursor-ring {
   }
 
   .hero-stage {
-    min-height: 280px;
-    padding: 1rem 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 340px;
+    padding: 1.25rem 0;
+    position: relative;
+    overflow: visible;
   }
 
   .falcon-visual-wrap {
-    max-width: 420px;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
   }
 
   .falcon-svg {
-    max-width: 400px;
-    max-height: 270px;
-    opacity: 0.5;
+    width: 135%;
+    max-width: 560px;
+    min-width: 420px;
+    max-height: 300px;
+    opacity: 0.82;
   }
 
   .hero-title {
-    font-size: clamp(3.4rem, 16.5vw, 4.6rem);
+    font-size: clamp(4.1rem, 20.5vw, 5.5rem);
+    letter-spacing: -0.03em;
+    line-height: 0.92;
+    margin-bottom: 1.15rem;
   }
 
   .symbolism-line {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
   }
 
   .tagline {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
   }
 
   .statement-line {
